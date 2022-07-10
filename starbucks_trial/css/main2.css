@@ -698,6 +698,11 @@ header .badges .badge>a>img {}
 
 }
 
+.indonesia:hover .indonesia::before {
+    opacity: 1;
+}
+
+
 /* 그림 크기 잡아야 제대로 위치 정할 수 있다! */
 .indonesia::before {
     content: "";
@@ -730,12 +735,18 @@ header .badges .badge>a>img {}
     /* !!relative 있음!! */
 }
 
+.indonesia .inner:hover img {
+    opacity: 1;
+}
+
 .indonesia .inner img{
     position: absolute;
+    transition: 1.5s;
 }
 
 .indonesia .inner .indonesia__img {
     left: -300px;
+    opacity: 0;
     /*그림 그냥 올렸을 때 위치보고 방향 잡자!*/
 }
 
@@ -974,6 +985,7 @@ footer {
 
 footer .inner {
     width: 1000px;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -1077,6 +1089,31 @@ footer .inner .btn_info .buttons {
 footer .inner .btn_info .buttons .btn--white {
     margin: 0 3px;
 }
+
+footer .inner .starbucks_info {}
+
+footer .inner .starbucks_info>ul {
+    display: flex;
+    justify-content: center;
+}
+
+footer .inner .starbucks_info>ul>li {
+    padding: 0 20px 0 0;
+}
+
+footer .inner .starbucks_info>ul>li>a {
+    font-size: 12px;
+    color: #999999;
+}
+
+footer .inner .starbucks_info p {
+    display: block;
+    margin: 20px 0;
+    font-size: 12px;
+    text-align: center;
+    color: #999999;
+}
+
 
 
 
