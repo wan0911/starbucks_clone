@@ -1,0 +1,155 @@
+/* COMMON */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 13px Avenir, Arial, georgia;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Font */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 34px;
+}
+
+header {
+    background-color: #f6f5ef;
+    height: 120px;
+}
+
+header .inner {
+    position: relative;
+    display: flex;
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+/* header logo */
+header .inner .header__logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: 75px;
+}
+
+header .inner .header__logo a {}
+
+header .inner .header__logo a img {
+    display: block;
+}
+
+/* sub menu */
+header .inner .sub_menu {
+    position: absolute;
+    left: 550px;
+    display: flex;
+    font-size: 13px;
+}
+
+header .inner .sub_menu li {
+    padding: 15px 15px 10px 0px;
+}
+
+header .inner .sub_menu li:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+header .inner .sub_menu li a {
+    text-decoration: none;
+    color: #656565;
+}
+
+header .inner .sub_menu li::after {
+    padding-left: 10px;
+    content: "|";
+    color: #e7e6e6;
+}
+
+header .inner .sub_menu li:last-child:after {
+    content: "";
+}
+
+/* main menu */
+header .inner .main_menu {
+    position: absolute;
+    display: flex;
+    left: 400px;
+    margin-top: 40px;
+    font-size: 13px;
+    font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+
+header .inner .main_menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0 0 0;
+    /* background-color: rosybrown; */
+}
+
+header .inner .main_menu a>li {
+    /* background-color: blue; */
+    height: 69px;
+    padding: 10px 20px;
+}
+
+header .inner .main_menu a li:hover {
+    background-color: #2C2A29;
+    color: #669900;
+    text-decoration: underline;
+}
+
+header .inner .main_menu .sub_wrap {
+    /* display: none; */
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color:green;
+}
+
+header .inner .main_menu .sub_wrap ul {}
+
+header .inner .main_menu .sub_wrap ul a {}
+
+header .inner .main_menu .sub_wrap ul a li {}
+
+
+
+
+
+
+
+/* header search */
+header .inner .header__search {
+    position: absolute;
+    right: 70px;
+    top: 0;
+    bottom: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #C8C8C8;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 6px;
+}
+
+header .inner .header__search span {
+    color: #666;
+}
+
+
+
