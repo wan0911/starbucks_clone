@@ -16,7 +16,8 @@ body {
 }
 
 .strong {
-    font-weight: 800;  /*font 별로 strong이 안먹을 수 있다, 400,700,800을 가져와서 800이 적용될 것*/
+    font-weight: 800;
+    /*font 별로 strong이 안먹을 수 있다, 400,700,800을 가져와서 800이 적용될 것*/
 }
 
 a {
@@ -177,7 +178,7 @@ header .inner .sub_menu .search {
 }
 
 header .inner .sub_menu .search input {
-    width: 30px;
+    width: 10px;
     height: 30px;
     transition: width .4s;
     font-size: 12px;
@@ -214,8 +215,7 @@ header .main_menu>ul {
     display: flex;
 }
 
-header .main_menu ul li.item {
-}
+header .main_menu ul li.item {}
 
 header .main_menu ul li.item .item__name {
     padding: 10px 20px 34px 20px;
@@ -311,7 +311,7 @@ header .main_menu ul li.item .item__contents .item__contents__additional .inner 
     position: relative;
     font-size: 12px;
     display: block;
-    
+
 }
 
 header .main_menu ul li.item .item__contents .item__contents__additional .inner a {
@@ -336,6 +336,7 @@ header .badges {
     top: 150px;
     right: 20px;
 }
+
 /* 지금은 header 따라 위치를 조정했다. 하지만, 뷰포트로 줘도 됨.. */
 
 header .badges .badge {}
@@ -348,7 +349,7 @@ header .badges .badge>a>img {}
 /* VISUAL */
 .visual {
     position: relative;
-    background-image: url("../images/visual_bg.jpeg");
+    background-image: url("../images2/visual_bg.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -370,8 +371,7 @@ header .badges .badge>a>img {}
 
 .visual .inner .slogan>img {}
 
-.visual .inner .slogan>a {
-}
+.visual .inner .slogan>a {}
 
 .visual .inner .slogan>.btn {
     display: block;
@@ -421,32 +421,30 @@ header .badges .badge>a>img {}
     width: 370px;
 }
 
-
-.visual .inner:hover .image.item_1 {
-    opacity: 1;    
+/* VISUAL: HOVER -> ANIMATION */
+.visual .inner.animate .image.item_1 {
+    opacity: 1;
     transition-delay: .4s;
 }
 
-.visual .inner:hover .image.item_2 {
-    opacity: 1;    
+.visual .inner.animate .image.item_2 {
+    opacity: 1;
     transition-delay: .8s;
 }
 
-.visual .inner:hover .image.item_3 {
-    opacity: 1;    
+.visual .inner.animate .image.item_3 {
+    opacity: 1;
     transition-delay: 1.2s;
 }
 
-.visual .inner:hover .slogan {
-    opacity: 1;    
+.visual .inner.animate .slogan {
+    opacity: 1;
 }
 
-.visual .inner:hover .slogan .btn {
-    opacity: 1;    
+.visual .inner.animate .slogan .btn {
+    opacity: 1;
     transition-delay: 1.6s;
 }
-
-
 
 /* NOTICE */
 .notice {}
@@ -461,7 +459,8 @@ header .badges .badge>a>img {}
     bottom: 0;
     left: 0;
     width: 50%;
-    height: 100%; /*자식 요소를 따라간다*/
+    height: 100%;
+    /*자식 요소를 따라간다*/
     background-color: #111111;
 }
 
@@ -471,7 +470,8 @@ header .badges .badge>a>img {}
     bottom: 0;
     right: 0;
     width: 50%;
-    height: 100%; /*자식 요소를 따라간다*/
+    height: 100%;
+    /*자식 요소를 따라간다*/
     background-color: #f6f5ef;
 }
 
@@ -488,20 +488,29 @@ header .badges .badge>a>img {}
     align-items: center;
     color: white;
     display: flex;
+    overflow: hidden;
 }
 
 .notice .notice_line .inner .inner__left h1 {
-    position: absolute; /*문서 흐름에서 벗어남*/
+    position: absolute;
+    /*문서 흐름에서 벗어남*/
     left: 0;
     font-weight: bold;
 }
 
-.notice .notice_line .inner .inner__left .swiper_container {
+.notice .notice_line .inner .inner__left .swiper {
     position: absolute;
+    height: 62px;
     left: 80px;
     flex-grow: 1;
     font-size: 14px;
 }
+
+.notice .notice_line .inner .inner__left .swiper .swiper-wrapper .swiper-slide {
+    height: 62px;
+    line-height: 62px;
+}
+
 
 /* !!absolute와 relative 문제가... */
 .notice .notice_line .inner .inner__left a {
@@ -520,7 +529,8 @@ header .badges .badge>a>img {}
     position: relative;
     right: 120px;
     width: 40%;
-    height: 100%; /*자식 요소를 따라간다*/
+    height: 100%;
+    /*자식 요소를 따라간다*/
     background-color: #f6f5ef;
     display: flex;
     align-items: center;
@@ -543,6 +553,45 @@ header .badges .badge>a>img {}
     vertical-align: bottom;
 }
 
+/* PROMOTION */
+.notice .promotion {
+    position: relative;
+    height: 658px;
+    background-color: #f6f5ef;
+}
+
+.notice .promotion .swiper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 20px;
+    height: 600px;
+    width: calc(819px*3 + 20px);
+    /* background-color: orange; */
+}
+
+.notice .promotion .swiper .swiper-wrapper {}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide {
+    opacity: 0.5;
+    transition: .2s;
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide-active {
+    opacity: 1;
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide .btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100px;
+    text-align: center;
+}
+
+
 
 /* REWARDS */
 .rewards {
@@ -551,7 +600,8 @@ header .badges .badge>a>img {}
 
 .rewards .inner {
     display: flex;
-    gap: 20px;  /*flex끼리 띄우는 것*/
+    gap: 20px;
+    /*flex끼리 띄우는 것*/
     padding: 30px 0 40px 0;
 }
 
@@ -563,7 +613,8 @@ header .badges .badge>a>img {}
 }
 
 .rewards .inner .rewards__items {
-    flex-grow: 1; /*공간 전체를 차지하는 요소*/
+    flex-grow: 1;
+    /*공간 전체를 차지하는 요소*/
 }
 
 .rewards .inner .rewards__items .rewards__items__register {
@@ -612,7 +663,8 @@ header .badges .badge>a>img {}
     position: relative;
     background-image: url("../images2/peru_bg.jpg");
     height: 570px;
-    overflow: hidden; /*안그러면 넘친다!*/
+    overflow: hidden;
+    /*안그러면 넘친다!*/
 }
 
 .peru::before {
@@ -622,7 +674,8 @@ header .badges .badge>a>img {}
     left: 0;
     display: block;
     background-image: url("../images2/peru_bg_left.png");
-    background-size: cover; /*보통 contain일 때 repeat이 일어남;; cover 주면 크기따라 알아서 잘림*/
+    background-size: cover;
+    /*보통 contain일 때 repeat이 일어남;; cover 주면 크기따라 알아서 잘림*/
     background-repeat: no-repeat;
     width: 350px;
     height: 350px;
@@ -635,7 +688,7 @@ header .badges .badge>a>img {}
     right: 0;
     display: block;
     background-image: url("../images2/peru_bg_right.png");
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
@@ -647,7 +700,8 @@ header .badges .badge>a>img {}
 }
 
 .peru .inner .img_product {
-    display: block; /*중요!! 높이 맞출 때*/
+    display: block;
+    /*중요!! 높이 맞출 때*/
     position: absolute;
     width: 250px;
     top: 140px;
@@ -657,11 +711,11 @@ header .badges .badge>a>img {}
     opacity: 0;
 }
 
-.peru .inner:active .img_product {
+/* PERU: HOVER -> ANIMATION */
+.peru .inner.animate .img_product {
     transform: translate(0px, 0);
     opacity: 1;
 }
-
 
 .peru .inner .peru__contents {
     position: absolute;
@@ -672,7 +726,8 @@ header .badges .badge>a>img {}
     opacity: 0;
 }
 
-.peru .inner:active .peru__contents {
+/* PERU: HOVER -> ANIMATION */
+.peru .inner.animate .peru__contents {
     transform: translate(0px, 0);
     opacity: 1;
 }
@@ -682,7 +737,8 @@ header .badges .badge>a>img {}
 }
 
 .peru .inner .peru__contents>.btn {
-    display: block; /*원래는 inline-block 속성이었기 때문에*/
+    display: block;
+    /*원래는 inline-block 속성이었기 때문에*/
     width: 90px;
     margin-top: 40px;
 }
@@ -701,7 +757,6 @@ header .badges .badge>a>img {}
 .indonesia:hover .indonesia::before {
     opacity: 1;
 }
-
 
 /* 그림 크기 잡아야 제대로 위치 정할 수 있다! */
 .indonesia::before {
@@ -735,11 +790,12 @@ header .badges .badge>a>img {}
     /* !!relative 있음!! */
 }
 
-.indonesia .inner:hover img {
+/* hover->animate */
+.indonesia .inner.animate img {
     opacity: 1;
 }
 
-.indonesia .inner img{
+.indonesia .inner img {
     position: absolute;
     transition: 1.5s;
 }
@@ -799,9 +855,9 @@ header .badges .badge>a>img {}
     opacity: 1;
 } */
 
-.favorite .inner:hover .favorite__title_1, 
-.favorite .inner:hover .favorite__title_2, 
-.favorite .inner:hover .favorite__item {
+.favorite .inner.animate .favorite__title_1,
+.favorite .inner.animate .favorite__title_2,
+.favorite .inner.animate .favorite__item {
     transform: translate(0px, 0);
     opacity: 1;
 }
@@ -833,7 +889,7 @@ header .badges .badge>a>img {}
     transition: 1s;
 }
 
-.favorite .inner:hover .btn--white {
+.favorite .inner.animate .btn--white {
     opacity: 1;
 }
 
@@ -884,7 +940,7 @@ header .badges .badge>a>img {}
     left: 330px;
 }
 
-.magazine .inner:hover .magazine__image {
+.magazine .inner.animate .magazine__image {
     opacity: 1;
 }
 
@@ -973,7 +1029,8 @@ header .badges .badge>a>img {}
     transform: translate(900px, 0);
 }
 
-.store .inner:hover img, .store .inner:hover .btn--black {
+.store .inner.animate img,
+.store .inner.animate .btn--black {
     transform: translate(0, 0);
     opacity: 1;
 }
@@ -1045,8 +1102,7 @@ footer .inner .sub_menu>img {
 }
 
 
-footer .inner .btn_info {
-}
+footer .inner .btn_info {}
 
 footer .inner .btn_info>ul {
     display: flex;
@@ -1074,6 +1130,7 @@ footer .inner .btn_info>ul>li:first-child a {
 footer .inner .btn_info>ul>li>a {
     color: #CCCCCC;
 }
+
 footer .inner .btn_info>ul>li>a:hover {
     text-decoration: underline;
 }
@@ -1113,51 +1170,3 @@ footer .inner .starbucks_info p {
     text-align: center;
     color: #999999;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
