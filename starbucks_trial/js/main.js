@@ -42,14 +42,40 @@ const swiperPromotion = new Swiper(".promotion .swiper", {
         nextEl: ".promotion .swiper-button-next",
     }
 })
-//ppt : promotion css부분
 
+function controlAutoplay() {
+    if (swiperPromotion.autoplay.running === true) {
+        swiperPromotion.autoplay.stop();
+    } else {
+        swiperPromotion.autoplay.start();
+    }
+}
+
+//TOGGLE
+const promotionToggleBtn = document.querySelector(".toggle-promotion");
+const promotionToggleIcon = document.queryCommandIndeterm(".toggle-promotion span");
+const promotionEl = document.querySelector(".promotion");
+
+promotionToggleBtn.addEventListener("click", function () {
+    if (promotionEl.classList.contains("hide")) {
+        promotionEl.classList.remove("hide");
+    } else {
+        promotionEl.classList.add("hide");
+    }
+
+    if (promotionToggleBtn.style.transform === "") {
+        promotionToggleBtn.style.transform = "rotate(180deg)";
+    } else {
+        promotionToggleBtn.style.transform = "";
+    }
+})
 
 //SCROLL
 let scrollYpos;
+// scroll 문제? -> xx : scroll이 발생할 때만 일어나므로 함수 안에 넣어줘야 함!
 window.addEventListener("scroll", function () {
     scrollYpos = window.scrollY;
-    console.log(scrollYpos);
+    // console.log(scrollYpos);
 
     if (scrollYpos > 2800) {
         const storeAnimate = document.querySelector(".store .inner");
@@ -74,4 +100,5 @@ window.onload = () => {
     visualInner.classList.add("animate");
 }
 
-//scroll 문제?
+
+
